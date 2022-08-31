@@ -2,7 +2,7 @@
 
 Nome dos integrantes: 
 - Antonio Marcos 
-- Pessoa 2
+- Adauto Ferreira de Matos Junior
 - Pessoa 3
 
 Link do Surge: www.link.com.br
