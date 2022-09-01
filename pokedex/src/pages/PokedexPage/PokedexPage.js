@@ -1,11 +1,13 @@
 import react from 'react'
-
-
+import { Title ,HeaderConteiner,Logo,ButtonContainer,Button} from '../../Header/styled'
 export function PokedexPage () {
 
   return (
-    <>
-    <h1>DETALHES DO POKEMONS</h1>
-    </>
+    <HeaderConteiner>
+    <ButtonContainer>
+       <Button> VOLTAR PARA LISTA DE POKEMONS </Button>
+    </ButtonContainer>
+    <Title> POKEDEX</Title>
+  </HeaderConteiner>
   )
 }
