@@ -1,5 +1,5 @@
 import react from 'react'
-import LogoPOKEMON  from '../../imagens/logo.png'
+import LogoPOKEMON  from '../../Imagens/logo.png'
 import { Title ,HeaderConteiner,Logo,ButtonContainer,Button} from '../../Header/styled'
 
 
