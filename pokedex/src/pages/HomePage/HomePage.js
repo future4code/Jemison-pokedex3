@@ -5,7 +5,7 @@ export function HomePage () {
 
   return (
     <>
-    <h1>DETALHES DO POKEMONS</h1>
+    <h1>TELA INICIAL </h1>
     </>
   )
 }
