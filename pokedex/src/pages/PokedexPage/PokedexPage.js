@@ -1,7 +1,7 @@
 import react from 'react'
 
 
-export function pokedexPage () {
+export function PokedexPage () {
 
   return (
     <>

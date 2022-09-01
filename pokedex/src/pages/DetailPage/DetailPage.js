@@ -1,7 +1,7 @@
 import react from 'react'
 
 
-export function DetailPAge () {
+export function DetailPage () {
 
   return (
     <>
