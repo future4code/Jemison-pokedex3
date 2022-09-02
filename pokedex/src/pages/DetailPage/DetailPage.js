@@ -1,11 +1,15 @@
 import react from 'react'
-
+import { Title ,HeaderConteiner,Logo,ButtonContainer,Button} from '../../Header/styled'
 
 export function DetailPage () {
 
   return (
-    <>
-    <h1>DETALHES DO POKEMONS</h1>
-    </>
+    <HeaderConteiner>
+       <Title> DETALHES DOS POKEMONS</Title>
+    <ButtonContainer>
+       <Button> VOLTAR </Button>
+       <Button> ADICONAR/REMOVER DA POKEDEX </Button>
+    </ButtonContainer>
+  </HeaderConteiner>
   )
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import {HomePage} from "../pages/HomePage/HomePage"
-import {PokedexPage} from "../pages/PokedexPage/PokedexPage"
-import {DetailPage} from '../pages/DetailPage/DetailPage'
+import {HomePage} from "../Pages/HomePage/HomePage"
+import {PokedexPage} from "../Pages/PokedexPage/PokedexPage"
+import {DetailPage} from '../Pages/DetailPage/DetailPage'
 
 const Router = () => {
   
@@ -11,8 +11,8 @@ const Router = () => {
     <Routes>
 
       <Route path="/" element={<HomePage />} />
-      <Route path="/product" element={<PokedexPage />} />
-      <Route path="/product/cart" element={<DetailPage />}  />
+      <Route path="/pokedex" element={<PokedexPage />} />
+      <Route path="/pokedex/:id" element={<DetailPage />}  />
       
     </Routes>
   </BrowserRouter>
