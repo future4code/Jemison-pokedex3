@@ -18,7 +18,7 @@ export function PokedexPage () {
      // newCart[productIndex].quantity--
     //}
     //setCart(newCart)
-  }
+  //}
   return (
     <HeaderConteiner>
     <ButtonContainer>
