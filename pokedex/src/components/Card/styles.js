@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+import { CgAdd, CgMathPlus } from "react-icons/cg";
 
+export const Add = styled(CgAdd)`
+  margin-right: 10px;
+`;
+export const Plus = styled(CgMathPlus)`
+  margin-right: 10px;
+`;
 export const Container = styled.div`
   border: 2px solid #2b71b8;
   padding: 30px;
@@ -48,7 +55,7 @@ export const Button = styled.button`
     }
   }
 `;
-export const Details = styled.div`
+export const Details = styled(Link)`
   padding: 10px 30px;
   text-decoration: none;
   color: #2b71b8;
