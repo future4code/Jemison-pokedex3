@@ -1,55 +1,49 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import GlobalContext from "../../global/GlobalContext";
+import { useContext } from "react";
 
-import React from 'react'
-import { Card, CardActionArea, CardContent, CardMedia , Box, Typography,Button} from '@mui/material'
-import { useNavigate } from 'react-router';
-import { goToDetailPokemons } from '../../Routes/coordinator';
+import {
+  Container,
+  Image,
+  ButtonContainer,
+  Button,
+  Details,
+  Name,
+  Add,
+  Plus,
+} from "./styles";
+import { ImageContainer } from "../CardPokedex/styles";
 
-// o que esta sendo exibido na tela 
+function Card({ name, url, pokemon }) {
+  const [ id] = url.match(/pokemon\/(\d+)\//i);
+  const {  state ,setters } = useContext(GlobalContext);
 
+  const isDisabled = state.pokedex.some((p) => p.name === name);
 
-export function PokemonCard ({name , image}) {
-
-const [tela , setTela]= useState();
- 
-const addToPokemon =(event) =>{
- event.preventDefault();
- 
+  return (
+    <Container>
+      <ImageContainer>
+        <Image
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`}
+        />
+      </ImageContainer>
+      <Name>{name}</Name>
+      <ButtonContainer>
+        <Button
+          disabled={isDisabled}
+          onClick={() => setters.addToPokedex(pokemon)}
+        >
+          <Add />
+          Adicionar
+        </Button>
+        <Details as={Link} to={`/details/${id}`}>
+          <Plus />
+          Detalhes
+        </Details>
+      </ButtonContainer>
+    </Container>
+  );
 }
 
-
-
-return(
-  <Card sx={{ maxWidth: 345 }}>
-<CardActionArea>
-  
-
-  <CardMedia component="img" height="200" image={image} /> {/* CHAMANDO A IMAGEM DOS POKEMONS  */}
-
-  <CardContent>
-    <Box display="flex" justifyContent="space-between" alignItems="center">
-
-      <Typography gutterBottom variant="h5" component="div">
-        {name}
-      </Typography>
-      
-    
-      
-    </Box>
-  </CardContent>
-
-  <CardContent>
-
-  <Button>Detalhes</Button>  {/* IR AOS DETALHES DE CADA POKEMON  */}
-  <Button>Adiocionar</Button>  {/* ADICIONAR UM POKEMON NA POKEDEX / VARIAVEL DE ESTADO PARA FAZER 
-   */}
-  </CardContent>
-
-</CardActionArea>
-
-</Card>
-
-
-  
-
-
-) }
+export default Card;
