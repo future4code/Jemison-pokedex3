@@ -1,5 +1,5 @@
-import react from 'react'
-import { Title ,HeaderConteiner,Logo,ButtonContainer,Button} from '../../Header/styled'
+
+import { Title ,HeaderConteiner,ButtonContainer,Button} from '../../Header/styled'
 
 export function DetailPage () {
 

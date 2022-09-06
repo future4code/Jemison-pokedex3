@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import react from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Title ,HeaderConteiner,Logo,ButtonContainer,Button} from '../../Header/styled'
