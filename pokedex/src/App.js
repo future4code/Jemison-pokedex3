@@ -1,23 +1,17 @@
 import Router from "./Routes/Router";
-import { createGlobalStyle } from "styled-components";
-import { ToastContainer } from "react-toastify";
+import {GlobalState} from '../src/global/GlobalState'
+import GlobalStateContext from "./global/GlobalContext";
 
 function App() {
   return (
     <>
-      <GlobalStyle />
+      <GlobalState>
       <Router />
-      <ToastContainer position="bottom-right" />
+      </GlobalState>
+      
     </>
   );
 }
 
-const GlobalStyle = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Nunito', sans-serif;;
-  }
-`;
+
 export default App;

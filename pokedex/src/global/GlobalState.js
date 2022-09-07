@@ -1,58 +1,25 @@
 import axios from "axios";
-import React, {useState,useEffect} from "react";
-import GlobalContext from "./GlobalContext";
-import { URLbase } from "../Api/Api";
-import {toast} from 'react-toastify'
+import { useState } from "react"
+import GlobalStateContext from "./GlobalContext"
+import useRequestData from "../Hooks/useRequestData";
+import {URLBase} from '../Api/Api'
 
-import "react-toastify/dist/ReactToastify.css";
- // status das informações 
+export function GlobalState(props){   
 
- export const GlobalState = (props) => {
-  
+    //Requisições
+ /*    const data = useRequestData(`${URLBase}/pokemon?limit=20&offset=0`)
+ */
+    //estados
     const [pokemon, setPokemon] = useState([]);
-    const [details, setDetails] = useState();
-    const [limit, setLimit] = useState(20);
-    const [offset, setOffset] = useState(0);
+    const [details, setDetails] = useState([]);
     const [pokedex, setPokedex] = useState([]);
+    const [limit, setLimit] = useState(20);
 
+   // requisição para lista 
 
-
-
-useEffect(()=>{
-    const localPokedex=localStorage.getItem('pokedex')
-     localPokedex&& setPokedex(JSON.parse(localPokedex))
-      },[])
-      
-      useEffect(()=>{
-      localStorage.setItem('pokedex',JSON.stringify(pokedex))
-      },[pokedex])
-
-// botao para adicionar os pokemons
-  
-    const addToPokedex = (pokemon) => {
-      const isPokemonAlreadyInPokedex = pokedex.some((pokemonInPokedex) => {
-        return pokemonInPokedex.name === pokemon.name;
-      });
-  
-      if (!isPokemonAlreadyInPokedex) {
-        setPokedex([...pokedex, pokemon]);
-        toast.success("Pokémon adicionado com sucesso!");
-      }
-    };
-// botao para remover pokemon 
-
-    const removeFromPokedex = (pokemon) => {
-      const newPokedex = pokedex.filter((pokemonInPokedex) => {
-        return pokemonInPokedex.name !== pokemon.name;
-      });
-      setPokedex(newPokedex);
-      toast.success("Pokémon removido com sucesso!");
-    };
-
-// requisicao para exibir os pokemons 
     const getPokemonList = () => {
       axios
-        .get(`${URLbase}?offset=${offset}&limit=${limit}`)
+        .get(`${URLBase}pokemon?limit=${limit}`)
         .then((res) => {
           setPokemon(res.data.results);
         })
@@ -60,40 +27,24 @@ useEffect(()=>{
           console.log("não foi", error);
         });
     };
+    
 
-// Detalis dos pokemons requisicao 
-  
-    const getPokemonDetail = (id) => {
-      axios
-        .get(`${URLbase}/${id}`)
-           .then((res) => {
-               console.log("foi", res.data);
-          setDetails(res.data);
-        })
-        .catch((error) => {
-          console.log("não foi", error);
-        });
-    };
-  
-    const state =  ({pokemon, details, limit, offset, pokedex}) ;
-    const setters = {
-      setPokemon,
-      setDetails,
-      setLimit,
-      setOffset,
-      setPokedex,
-      addToPokedex,
-      removeFromPokedex,
-    };
-    const requests = { getPokemonList, getPokemonDetail };
-  
+    //dados
+    const estados ={
+       pokemon,
+       setPokedex,
+       details,
+       setDetails,
+       pokedex,
+       setPokemon,
+       limit,
+        setLimit   
+    }
+    const requisicao = {getPokemonList}
+
     return (
-      <GlobalContext.Provider value={{ state, setters, requests }}>
-        {props.children}
-      </GlobalContext.Provider>
-    );
-
+            <GlobalStateContext.Provider value={{estados , requisicao}}>
+                {props.children}
+            </GlobalStateContext.Provider>
+            )
 }
-
- 
-  

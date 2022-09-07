@@ -1,49 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import GlobalContext from "../../global/GlobalContext";
 import { useContext } from "react";
+import React from "react";
+import { CardContainer, NameText, PriceContainer, ProductImage } from "./styles";
 
-import {
-  Container,
-  Image,
-  ButtonContainer,
-  Button,
-  Details,
-  Name,
-  Add,
-  Plus,
-} from "./styles";
-import { ImageContainer } from "../CardPokedex/styles";
 
-function Card({ name, url, pokemon }) {
-  const [ id] = url.match(/pokemon\/(\d+)\//i);
-  const {  state ,setters } = useContext(GlobalContext);
+export  function Card  ({name, url, pokemon}) {
 
-  const isDisabled = state.pokedex.some((p) => p.name === name);
+  const [, id] = url.match(/pokemon\/(\d+)\//i);
 
-  return (
-    <Container>
-      <ImageContainer>
-        <Image
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`}
-        />
-      </ImageContainer>
-      <Name>{name}</Name>
-      <ButtonContainer>
-        <Button
-          disabled={isDisabled}
-          onClick={() => setters.addToPokedex(pokemon)}
-        >
-          <Add />
-          Adicionar
-        </Button>
-        <Details as={Link} to={`/details/${id}`}>
-          <Plus />
-          Detalhes
-        </Details>
-      </ButtonContainer>
-    </Container>
-  );
+  return(
+    <CardContainer>
+      <ProductImage
+       name={pokemon.name}
+       src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`}
+
+      />
+
+     <NameText>{name}</NameText>
+
+     <PriceContainer>
+      <button>DETALHES</button> {/* JOHN  */}
+      <button>ADICIONAR</button> {/* ADAUTO  */}
+     </PriceContainer>
+    </CardContainer>
+  
+
+  )
+
+
+
+
+
+
+
 }
-
-export default Card;
