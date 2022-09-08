@@ -1,35 +1,47 @@
-import { useContext } from "react";
-import React from "react";
-import { CardContainer, NameText, PriceContainer, ProductImage } from "./styles";
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { Box, Button, CardActionArea } from "@mui/material";
+import pokebol from '../../Imagens/pokebol.png'
+/* import { CardContainer, NameText, PriceContainer, ProductImage } from "./styles"; */
 
 
-export  function Card  ({name, url, pokemon}) {
+export  function PokemonsCard  ({name, url, pokemon}) {
 
   const [, id] = url.match(/pokemon\/(\d+)\//i);
 
   return(
-    <CardContainer>
-      <ProductImage
-       name={pokemon.name}
-       src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`}
+      <Card sx={{ maxWidth:345 }}>
 
-      />
+        <CardActionArea>
+          <CardMedia component="img" height="200" alt="green iguana" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`}/>
 
-     <NameText>{name}</NameText>
+          <CardContent>
+            <Box display="grid" justifyContent="space-between" alignItems="center">
 
-     <PriceContainer>
-      <button>DETALHES</button> {/* JOHN  */}
-      <button>ADICIONAR</button> {/* ADAUTO  */}
-     </PriceContainer>
-    </CardContainer>
-  
+                <Typography gutterBottom variant="h5" component="div">
+                {name}
+                 </Typography>
+                    <Typography gutterBottom variant="caption" component="div">
 
-  )
+                     <Button  variant="outlined" color ="error" >  Detalhes </Button> 
+                     <Button  color="success"> Adicionar </Button>
+                     
+                
 
+                     
+                      
+                       
+                    
+                      
+                      </Typography>
+            </Box>
+          </CardContent>
+        </CardActionArea>
 
+      </Card>
+    )
+ }
 
-
-
-
-
-}
