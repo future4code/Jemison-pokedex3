@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import { goToHome } from "../../Routes/coordinator";
+import HeaderDetails from "../../Header/HeaderDetails"
 
 
 
@@ -12,9 +12,8 @@ export function DetailPage () {
    return (
      <div>
 
-      <header> DETALHES DOS POKEMONS </header>
-        <button onClick={() => goToHome(navegate)}>HOME</button>
-        <button>ADICIONAR A POKEDEX</button>
+      <HeaderDetails title ="NOME DO POKEMONS" />
+       
 
 
       </div>
