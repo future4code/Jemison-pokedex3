@@ -4,11 +4,14 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, Button, CardActionArea } from "@mui/material";
-import pokebol from '../../Imagens/pokebol.png'
+import { goToDetailPokemons } from "../../Routes/coordinator";
+import { useNavigate } from "react-router";
 /* import { CardContainer, NameText, PriceContainer, ProductImage } from "./styles"; */
 
 
 export  function PokemonsCard  ({name, url, pokemon}) {
+
+  const navegate=useNavigate()
 
   const [, id] = url.match(/pokemon\/(\d+)\//i);
 
@@ -26,7 +29,12 @@ export  function PokemonsCard  ({name, url, pokemon}) {
                  </Typography>
                     <Typography gutterBottom variant="caption" component="div">
 
-                     <Button  variant="outlined" color ="error" >  Detalhes </Button> 
+                     <Button  variant="outlined" color ="error" 
+                     onClick={() =>goToDetailPokemons(navegate)}>  
+                     
+                     Detalhes </Button> 
+
+
                      <Button  color="success"> Adicionar </Button>
                      
                 
