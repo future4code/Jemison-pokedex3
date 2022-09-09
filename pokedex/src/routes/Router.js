@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import {HomePage} from "../Pages/HomePage/HomePage"
-import {PokedexPage} from "../Pages/PokedexPage/PokedexPage"
-import {DetailPage} from '../Pages/DetailPage/DetailPage'
+import {HomePage} from "../pages/HomePage/HomePage"
+import {PokedexPage} from "../pages/PokedexPage/PokedexPage"
+import {DetailPage} from '../pages/DetailPage/DetailPage'
 
 const Router = () => {
   
@@ -18,4 +18,4 @@ const Router = () => {
   </BrowserRouter>
 )}
 
-export default Router
+export default Router;

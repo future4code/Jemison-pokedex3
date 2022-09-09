@@ -4,6 +4,7 @@ import HeaderDetails from "../../Header/HeaderDetails"
 
 
 
+
 export function DetailPage () {
   
   //navegação dos botoes 

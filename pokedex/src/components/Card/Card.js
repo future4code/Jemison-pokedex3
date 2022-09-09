@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useContext } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -6,7 +7,8 @@ import Typography from "@mui/material/Typography";
 import { Box, Button, CardActionArea } from "@mui/material";
 import { goToDetailPokemons } from "../../Routes/coordinator";
 import { useNavigate } from "react-router";
-/* import { CardContainer, NameText, PriceContainer, ProductImage } from "./styles"; */
+import GlobalContext from "../../global/GlobalContext";
+
 
 
 export  function PokemonsCard  ({name, url, pokemon}) {
@@ -14,12 +16,19 @@ export  function PokemonsCard  ({name, url, pokemon}) {
   const navegate=useNavigate()
 
   const [, id] = url.match(/pokemon\/(\d+)\//i);
+    const { setters, state } = useContext(GlobalContext);
+  
+    const isDisabled = state.pokedex.some((p) => p.name === name);
+  
 
   return(
       <Card sx={{ maxWidth:345 }}>
 
+
+    
         <CardActionArea>
           <CardMedia component="img" height="200" alt="green iguana" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`}/>
+
 
           <CardContent>
             <Box display="grid" justifyContent="space-between" alignItems="center">
@@ -35,7 +44,7 @@ export  function PokemonsCard  ({name, url, pokemon}) {
                      Detalhes </Button> 
 
 
-                     <Button  color="success"> Adicionar </Button>
+                     <button disabled={isDisabled} onClick={() => setters.addPokedex(pokemon)}>ADICIONAR</button>
                      
                 
 
