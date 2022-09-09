@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router";
+import HeaderPokedex from '../../Header/HeaderPokedex'
 
 
 
@@ -8,8 +10,10 @@ export function PokedexPage () {
    return (
      <div>
 
-      <header> Pokedex </header>
-        
+
+        <HeaderPokedex title = "Pokedex" />
+    
+
       </div>
    )
 
