@@ -27,11 +27,11 @@ export function GlobalState(props){
      // "FUNCÃO QUE ADICIONA POKEMONS "
      
     const addPokedex = (pokemon) => {
-      const isPokemonAlreadyInPokedex = pokedex.some((pokemonInPokedex) => {
+      const isPokemonEmPokedex = pokedex.some((pokemonInPokedex) => {
         return pokemonInPokedex.name === pokemon.name;
       });
   
-      if (!isPokemonAlreadyInPokedex) {
+      if (!isPokemonEmPokedex) {
         setPokedex([...pokedex, pokemon]);
         alert("Pokemon Adicionado com Sucesso")        // criar um alert diferente 
       }
