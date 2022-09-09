@@ -1,6 +1,6 @@
-import Router from "./Routes/Router";
+import Router from "./routes/Router";
 import {GlobalState} from '../src/global/GlobalState'
-import GlobalStateContext from "./global/GlobalContext";
+
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import { goToPokedex } from "../../Routes/coordinator";
+import { goToPokedex } from "../../routes/coordinator";
 import {Card} from '../../components/Card/Card'
 import GlobalStateContext from "../../global/GlobalContext";
 import { useContext , useEffect } from "react";

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import { goToHome } from "../../Routes/coordinator";
+import { goToHome } from "../../routes/coordinator";
 
 
 
