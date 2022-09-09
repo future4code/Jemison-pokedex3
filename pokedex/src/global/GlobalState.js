@@ -5,10 +5,9 @@ import {URLBase} from '../Api/Api'
 
 export function GlobalState(props){   
 
-    //Requisições
- /*    const data = useRequestData(`${URLBase}/pokemon?limit=20&offset=0`)
- */
-    //estados
+  
+    //ESTADOS INICIAS
+
     const [pokemon, setPokemon] = useState([]);
     const [details, setDetails] = useState([]);
     const [pokedex, setPokedex] = useState([]);
@@ -24,29 +23,35 @@ export function GlobalState(props){
       localStorage.setItem('pokedex', JSON.stringify(pokedex))
     }, [pokedex])
 
+
+     // "FUNCÃO QUE ADICIONA POKEMONS "
+     
     const addPokedex = (pokemon) => {
       const isPokemonAlreadyInPokedex = pokedex.some((pokemonInPokedex) => {
         return pokemonInPokedex.name === pokemon.name;
       });
   
       if (!isPokemonAlreadyInPokedex) {
-        setPokedex([...pokedex, pokemon]);        
+        setPokedex([...pokedex, pokemon]);
+        alert("Pokemon Adicionado com Sucesso")        // criar um alert diferente 
       }
     };
+ 
 
+    // "FUNCÃO QUE REMOVE POKEMONS "
 
     const removePokedex = (pokemon) => {
       const newPokedex = pokedex.filter((pokemonInPokedex) => {
         return pokemonInPokedex.name !== pokemon.name;
       });
       setPokedex(newPokedex);
+      alert("Pokemon Removido com Sucesso")    // criar um alert diferente 
     }
 
 
   
 
-   // requisição para lista 
-
+   // REQUISIÇÃO DA LISTA DE POKEMONS 
     const getPokemonList = () => {
       axios
         .get(`${URLBase}pokemon?limit=${limit}`)
@@ -57,9 +62,12 @@ export function GlobalState(props){
           console.log("não foi", error);
         });
     };
+
+    // REQUISIÇÃO DOS DETALHES  DE POKEMONS 
+
     
 
-    //dados
+    //DADOS
     const estados ={
        pokemon,
        setPokedex,
@@ -68,13 +76,26 @@ export function GlobalState(props){
        pokedex,
        setPokemon,
        limit,
-        setLimit   
+        setLimit
+       
     }
+
+    //BOTOES 
+
+    const botoes = {
+      addPokedex,
+      removePokedex
+
+    }
+    // "EXPULSANDOS AS REQUISIÇÕES "
+
     const requisicao = {getPokemonList}
 
     return (
-            <GlobalStateContext.Provider value={{estados , requisicao}}>
+            <GlobalStateContext.Provider value={{estados , requisicao , botoes }}>
                 {props.children}
             </GlobalStateContext.Provider>
             )
 }
+
+

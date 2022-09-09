@@ -3,10 +3,9 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import { Button } from "@mui/material";
-import styled from "styled-components"
 //
 
-import { goToHome} from "../Routes/coordinator";
+import { goToHome} from "../routes/coordinator";
 import { useNavigate } from "react-router";
 import logoPokemon from '../Imagens/logo.png'
 import {TitleHeader} from './styled'

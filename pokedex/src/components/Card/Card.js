@@ -5,9 +5,10 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, Button, CardActionArea } from "@mui/material";
-import { goToDetailPokemons } from "../../Routes/coordinator";
+import { goToDetailPokemons } from "../../routes/coordinator";
 import { useNavigate } from "react-router";
-import GlobalContext from "../../global/GlobalContext";
+import GlobalStateContext from "../../global/GlobalContext";
+
 
 
 
@@ -16,9 +17,9 @@ export  function PokemonsCard  ({name, url, pokemon}) {
   const navegate=useNavigate()
 
   const [, id] = url.match(/pokemon\/(\d+)\//i);
-    const { setters, state } = useContext(GlobalContext);
+    const {estados, botoes } = useContext(GlobalStateContext);
   
-    const isDisabled = state.pokedex.some((p) => p.name === name);
+    const isDisabled = estados.pokedex.some((p) => p.name === name);
   
 
   return(
@@ -44,13 +45,10 @@ export  function PokemonsCard  ({name, url, pokemon}) {
                      Detalhes </Button> 
 
 
-                     <button disabled={isDisabled} onClick={() => setters.addPokedex(pokemon)}>ADICIONAR</button>
+                     <Button   component="div" color="success"
+                      disabled={isDisabled} onClick={() => botoes.addPokedex(pokemon)}>ADICIONAR</Button>
                      
                 
-
-                     
-                      
-                       
                     
                       
                       </Typography>

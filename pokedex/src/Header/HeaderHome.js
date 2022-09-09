@@ -6,7 +6,7 @@ import { Button } from "@mui/material";
 import styled from "styled-components"
 //
 
-import { goToPokedex } from "../Routes/coordinator";
+import { goToPokedex } from "../routes/coordinator";
 import { useNavigate } from "react-router";
 import logoPokemon from '../Imagens/logo.png'
 import {TitleHeader} from './styled'
