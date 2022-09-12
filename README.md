@@ -17,7 +17,7 @@
   >
   > Botão para acessar os detalhes do pokemons escolhido
   >
-  > Botões para acessar á Pokedex
+  > Botão para acessar á Pokedex
 
  
 - Página Pokedex 
@@ -39,6 +39,18 @@
   > Rendirezação dos detalhes do pokemons escolhido
   >
   > Botões para acessar á página inicial
+
+
+### O não funcionou:
+
+- Botão ADICIONAR/REMOVER POKEDEX
+ 
+ > Não conseguimos desenvolver a lógica para para esse botão, tivemos algumas ideias, mas não conseguimos executar com clareza as ideias, e por questão de tempo também.
+   Decimos Colocar um botão de voltar a lógica do "-1" para quando o usuário 
+clikar e voltar para a pagina anterior.
+ >
+ > Mas a lógica de adicionar e remover o pokemon está sendo executada normalmente na página incial e da pokedex.
+ >
 
 ### Responsabilidades 
 
@@ -66,6 +78,8 @@
   > Responsável pela logica de rederizar as informações dos pokemons 
   >
   > Fez a estilização da página de detalhes 
+  >
+  > Responsável pelas requições da api
 
  
 
@@ -89,10 +103,12 @@
  > Renderização dos pokemons , como foi dito acima trazer as informações foi complicado ainda mas quando a informação
  principal era os pokemons, essa renderização levou mas dias do que o previsto.
  >
- 
+
 - Códigos externos 
 
  > Usamos biblioteca externa para a extilização dos carts, mas essa foi uma escolha do grupo para o desenvolvimento pessoal.
+ >
+ 
 
 ### Imagens do Projeto 
 
