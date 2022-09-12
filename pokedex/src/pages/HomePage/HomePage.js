@@ -4,8 +4,8 @@ import {PokemonsCard} from '../../components/Card/Card'
 import GlobalStateContext from "../../global/GlobalContext";
 import { useContext , useEffect } from "react";
 import HeaderHomePage from "../../Header/HeaderHome";
-import { Container,PokemonList } from "./styles";
-import { Button } from "@mui/material";
+import { ContainerPai,PokemonList } from "./styles";
+
 
 
 export function HomePage () {
@@ -39,10 +39,10 @@ export function HomePage () {
   };
    return (
     
-          <Container>
+          <ContainerPai>
           <HeaderHomePage title = "LISTA DE POKEMONS" >  </HeaderHomePage>
           <PokemonList>{renderizarListaPokemons()}</PokemonList>
-          </Container>
+          </ContainerPai>
       
   
     
