@@ -17,18 +17,21 @@ export  function PokemonsCard  ({name, url, pokemon}) {
   const navegate=useNavigate()
 
   const [, id] = url.match(/pokemon\/(\d+)\//i);
+
     const {estados, botoes } = useContext(GlobalStateContext);
   
     const isDisabled = estados.pokedex.some((p) => p.name === name);
   
 
   return(
-      <Card sx={{ maxWidth:345 }}>
+      <Card sx={{ maxWidth:500}}>
 
 
     
         <CardActionArea>
-          <CardMedia component="img" height="200" alt="green iguana" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`}/>
+          <CardMedia 
+           component="img" height="250" alt="green iguana" 
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`}/>
 
 
           <CardContent>
@@ -40,7 +43,7 @@ export  function PokemonsCard  ({name, url, pokemon}) {
                     <Typography gutterBottom variant="caption" component="div">
 
                      <Button  variant="outlined" color ="error" 
-                     onClick={() =>goToDetailPokemons(navegate)}>  
+                     onClick={() =>goToDetailPokemons(navegate,id)}>  
                      
                      Detalhes </Button> 
 

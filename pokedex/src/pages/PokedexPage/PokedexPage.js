@@ -27,7 +27,7 @@ export function PokedexPage () {
    
      return (
        <Container>
-        <HeaderPokedex title = "Pokedex" />
+        <HeaderPokedex title = "POKEDEX" />
         <PokemonList> {renderizaPokedex()}</PokemonList>
        </Container>
      );
