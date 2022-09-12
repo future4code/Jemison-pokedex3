@@ -38,6 +38,7 @@ Link do Surge: https://quarrelsome-transport.surge.sh/
   > Responsável pela logica renderização dos pokemons
   > Desenvolver os Header de todas as páginas 
   > Desenvlver as logicas básicas do código (Components,Global e Routers)
+  > Responsável pelas requições da api
   
 
 * Adauto Ferreira de Matos Junior
@@ -63,4 +64,3 @@ Link do Surge: https://quarrelsome-transport.surge.sh/
 
  > https://mui.com/pt/
 
- 
