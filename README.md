@@ -8,8 +8,8 @@ Nome dos integrantes:
 Link do Surge: https://quarrelsome-transport.surge.sh/
 
 O que funciona:
-- Item 1
-- Item 2
+### Página Home 
+ Item 2
 
 O que não funciona: 
 - Item 3
