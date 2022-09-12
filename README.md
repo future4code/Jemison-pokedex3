@@ -50,6 +50,7 @@ Link do Surge: https://quarrelsome-transport.surge.sh/
 * John Willian Aliore
   
   > Responsável pela logica de rederizar as informações dos pokemons 
+  > 
   > Fez a estilização da página de detalhes 
 
  
