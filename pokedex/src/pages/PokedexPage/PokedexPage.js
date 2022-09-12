@@ -3,7 +3,7 @@ import HeaderPokedex from '../../Header/HeaderPokedex'
 import CardPokedex from "../../components/CardPokedex/CardPokedex";
 import { useContext } from "react";
 import GlobalStateContext from "../../global/GlobalContext";
-import { Container, Message, PokemonList } from "./styles";
+import { ContainerPai, PokemonList } from "./styles";
 
 
 export function PokedexPage () {
@@ -26,10 +26,10 @@ export function PokedexPage () {
      };
    
      return (
-       <Container>
+       <ContainerPai>
         <HeaderPokedex title = "POKEDEX" />
         <PokemonList> {renderizaPokedex()}</PokemonList>
-       </Container>
+       </ContainerPai>
      );
    }
    

@@ -113,7 +113,7 @@ export function CardDetail({ name, frontImage, backImage, stats, types, abilitie
           </Grid>
           <Grid container columnSpacing={1} sx={{ order: { xs: 1, sm: 2 } }}>
             <Grid>
-              <Item>Tipos 📕</Item>
+              <Item>TIPOS 📕</Item>
             </Grid>
             <Grid>
               <Item>{renderTypes()}</Item>
