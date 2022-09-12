@@ -6,7 +6,7 @@
 * Adauto Ferreira de Matos Junior
 * John Willian Aliore
 
-Link do Surge: https://quarrelsome-transport.surge.sh/
+## Link do Surge: https://quarrelsome-transport.surge.sh/
 
 ### O que funciona:
 - Página Home 
@@ -80,4 +80,19 @@ Link do Surge: https://quarrelsome-transport.surge.sh/
  > https://mui.com/pt/
 
 
+### Dificuldades encontradas 
 
+- Leitura da API
+
+ > Foi um pouco complicado para trazer as informações da api.
+ >
+ > Renderização dos pokemons , como foi dito acima trazer as informações foi complicado ainda mas quando a informação
+ principal era os pokemons, essa renderização levou mas dias do que o previsto.
+ >
+ 
+- Códigos externos 
+
+ > Usamos biblioteca externa para a extilização dos carts, mas essa foi uma escolha do grupo para o desenvolvimento pessoal 
+ do grupo.
+ >
+ 
