@@ -92,7 +92,6 @@
  
 - Códigos externos 
 
- > Usamos biblioteca externa para a extilização dos carts, mas essa foi uma escolha do grupo para o desenvolvimento pessoal 
- do grupo.
+ > Usamos biblioteca externa para a extilização dos carts, mas essa foi uma escolha do grupo para o desenvolvimento pessoal.
  >
  
