@@ -9,7 +9,7 @@ export function GlobalState(props){
     //ESTADOS INICIAS
 
     const [pokemon, setPokemon] = useState([]);
-    const [details, setDetails] = useState([]);
+    const [details, setDetails] = useState();
     const [pokedex, setPokedex] = useState([]);
     const [limit, setLimit] = useState(20);
 
@@ -54,7 +54,7 @@ export function GlobalState(props){
    // REQUISIÇÃO DA LISTA DE POKEMONS 
     const getPokemonList = () => {
       axios
-        .get(`${URLBase}pokemon?limit=${limit}`)
+        .get(`${URLBase}?limit=${limit}`)
         .then((res) => {
           setPokemon(res.data.results);
         })
@@ -65,7 +65,17 @@ export function GlobalState(props){
 
     // REQUISIÇÃO DOS DETALHES  DE POKEMONS 
 
-    
+    const getPokemonDetail = (id) => {
+      axios
+        .get(`${URLBase}/${id}`)
+        .then((res) => {
+          console.log("foi", res.data);
+          setDetails(res.data);
+        })
+        .catch((error) => {
+          console.log("não foi", error);
+        });
+    };
 
     //DADOS
     const estados ={
@@ -89,7 +99,7 @@ export function GlobalState(props){
     }
     // "EXPULSANDOS AS REQUISIÇÕES "
 
-    const requisicao = {getPokemonList}
+    const requisicao = {getPokemonList,getPokemonDetail}
 
     return (
             <GlobalStateContext.Provider value={{estados , requisicao , botoes }}>
@@ -97,5 +107,3 @@ export function GlobalState(props){
             </GlobalStateContext.Provider>
             )
 }
-
-

@@ -40,7 +40,7 @@ export function HomePage () {
    return (
     
           <Container>
-          <HeaderHomePage title = "Lista de Pokemons" >  </HeaderHomePage>
+          <HeaderHomePage title = "LISTA DE POKEMONS" >  </HeaderHomePage>
           <PokemonList>{renderizarListaPokemons()}</PokemonList>
           </Container>
       

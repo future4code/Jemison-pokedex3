@@ -1,1 +1,1 @@
-export const URLBase = "https://pokeapi.co/api/v2/"
+export const URLBase = "https://pokeapi.co/api/v2/pokemon"
