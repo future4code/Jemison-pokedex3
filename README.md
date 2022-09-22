@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/66712916/191858057-a324d901-1571-4134-ad9c-98794bd30dd5.png)
+
+
 # POKEDEX
 
 ### Nome dos integrantes: 
